@@ -1,50 +1,41 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layouts from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layouts title="Home">
+  <Header />
+  <main
+    class="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center"
+  >
+    <div class="flex">
+      <div>
+        <h1 class="text-[30px] font-bold mb-4">Hi, I'm [Your Name]</h1>
+        <p class="text-xl text-gray-700 mb-6">
+          A passionate software developer creating innovative web solutions.
+        </p>
+        <div class="flex space-x-4">
+          <a
+            href="/projects"
+            class="bg-primary text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors"
+          >
+            View Projects
+          </a>
+          <a
+            href="/contact"
+            class="border border-primary text-primary px-6 py-3 rounded hover:bg-blue-50 transition-colors"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img
+          src="/profile.jpg"
+          alt="Profile"
+          class="w-64 h-64 object-cover rounded-full shadow-lg"
+        />
+      </div>
+    </div>
+  </main>
+</Layouts>

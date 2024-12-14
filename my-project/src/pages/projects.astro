@@ -1,0 +1,17 @@
+---
+import Layouts from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { PROJECTS } from '../data/projects';
+---
+<Layouts title="Projects">
+  <Header />
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-primary mb-8">My Projects</h1>
+    <div class="grid md:grid-cols-2 gap-6">
+      {PROJECTS.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </main>
+</Layouts>
